@@ -1,10 +1,55 @@
+
+/* ===== MAIN CONTAINER ===== */
 .home-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8022ccb4 0%, #7a24cf 100%);
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
+/* ===== GLOBAL INPUT STYLE (NEW SAFE ADD) ===== */
+input, select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* ===== GLOBAL BUTTON STYLE (SAFE ADD) ===== */
+button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #574fd6;
+}
+
+/* ===== TASK CARD ===== */
+.task-card {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== MAIN CONTENT ===== */
 .main-content {
   flex: 1;
   padding: 40px;
@@ -13,6 +58,7 @@
   margin: 0 auto;
 }
 
+/* ===== ADD TASK ===== */
 .add-task-section {
   background: white;
   border-radius: 15px;
@@ -27,12 +73,22 @@
   font-size: 1.5em;
 }
 
+/* ===== FILTER SECTION (NEW ADD) ===== */
+.filter-section {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUT GROUP ===== */
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* ===== INPUT FIELD ===== */
 .input-field {
   padding: 12px 15px;
   border: 2px solid #e0e0e0;
@@ -48,6 +104,7 @@
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* ===== TEXTAREA ===== */
 .textarea-field {
   padding: 12px 15px;
   border: 2px solid #e0e0e0;
@@ -61,9 +118,10 @@
 .textarea-field:focus {
   outline: none;
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(57, 85, 209, 0.1);
 }
 
+/* ===== PRIMARY BUTTON ===== */
 .btn-primary {
   padding: 12px 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -82,6 +140,7 @@
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
+/* ===== TASK SECTION ===== */
 .tasks-section {
   margin-top: 40px;
 }
@@ -92,12 +151,14 @@
   font-size: 1.5em;
 }
 
+/* ===== GRID ===== */
 .tasks-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
+/* ===== TASK CARD ENHANCED ===== */
 .task-card {
   background: white;
   border-radius: 12px;
@@ -107,6 +168,7 @@
   animation: fadeIn 0.5s ease-out;
 }
 
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -123,6 +185,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== TASK HEADER ===== */
 .task-header {
   display: flex;
   justify-content: space-between;
@@ -139,12 +202,14 @@
   flex: 1;
 }
 
+/* ===== ACTIONS ===== */
 .task-actions {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
 }
 
+/* ===== BUTTONS ===== */
 .btn-edit {
   background: #4ecdc4;
   color: white;
@@ -154,7 +219,6 @@
   cursor: pointer;
   font-size: 14px;
   transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
 .btn-edit:hover {
@@ -169,68 +233,21 @@
   border-radius: 6px;
   padding: 6px 12px;
   cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
 .btn-delete:hover {
   background: #ee5a52;
-  transform: scale(1.05);
 }
 
+/* ===== EDIT FORM ===== */
 .edit-form {
   background: #f8f9fa;
   padding: 15px;
   border-radius: 8px;
-  border: 2px solid #667eea;
+  border: 2px solid #556edd;
 }
 
-.edit-form .input-field,
-.edit-form .textarea-field {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.edit-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-  justify-content: flex-end;
-}
-
-.btn-save {
-  background: #51cf66;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-save:hover {
-  background: #40c057;
-  transform: translateY(-2px);
-}
-
-.btn-cancel {
-  background: #adb5bd;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-cancel:hover {
-  background: #868e96;
-  transform: translateY(-2px);
-}
-
+/* ===== DESCRIPTION ===== */
 .task-description {
   color: #666;
   font-size: 14px;
@@ -238,46 +255,27 @@
   margin: 10px 0;
 }
 
-.task-date {
-  color: #999;
-  font-size: 12px;
-}
-
+/* ===== NO TASK ===== */
 .no-tasks {
   background: white;
   border-radius: 12px;
   padding: 40px;
   text-align: center;
   color: #999;
-  font-size: 16px;
 }
 
-.loading {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
+/* ===== PAGINATION (NEW) ===== */
+.pagination {
   text-align: center;
-  color: #667eea;
-  font-size: 16px;
-  font-weight: 600;
+  margin-top: 20px;
 }
 
+.pagination button {
+  margin: 0 5px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .navbar-left h1 {
-    font-size: 1.4em;
-  }
-
-  .navbar-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-
   .main-content {
     padding: 20px;
   }

@@ -26,18 +26,26 @@ router.get("/user", verifytoken, authorizeRoles("admin", "manager", "user"), (re
 
 });
 
-// ADMIN: GET ALL USERS
-router.get("/all/users", verifytoken, adminMiddleware, async (req, res) => {
-  try {
-    console.log("Admin fetching all users");
-    const users = await User.find().select("-password");
-    console.log("Users fetched:", users.length);
-    res.json(users);
-  } catch (err) {
-    console.error("Error fetching all users:", err);
-    res.status(500).json({ message: "Error fetching users" });
+// ADMIN & MANAGER: GET ALL USERS
+router.get(
+  "/all/users",
+  verifytoken,
+  authorizeRoles("admin", "manager"),
+  async (req, res) => {
+    try {
+      console.log("Admin/Manager fetching all users");
+
+      const users = await User.find().select("-password");
+
+      console.log("Users fetched:", users.length);
+
+      res.json(users);
+    } catch (err) {
+      console.error("Error fetching all users:", err);
+      res.status(500).json({ message: "Error fetching users" });
+    }
   }
-});
+);
 
 // ADMIN: DELETE ANY USER
 router.delete("/all/users/:id", verifytoken, adminMiddleware, async (req, res) => {

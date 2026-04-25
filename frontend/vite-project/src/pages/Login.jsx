@@ -51,9 +51,9 @@ function Login() {
                 }
             }
 
-            localStorage.setItem("token", token);
-            localStorage.setItem("user", JSON.stringify(user));
-            console.log("Login successful, token and user stored");
+           localStorage.setItem("token", res.data.token);
+           localStorage.setItem("user", JSON.stringify(user));
+           console.log("Login successful, token and user stored");
 
             if (user?.role === "admin") {
                 navigate("/admin");
