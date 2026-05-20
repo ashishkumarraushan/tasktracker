@@ -36,26 +36,34 @@ Filter Tasks
 Pagination
 Responsive Dashboard UI
 🛠️ Installation & Setup
+
 1️⃣ Clone Repository
 git clone https://github.com/your-username/tasktracker.git
+
 2️⃣ Navigate to Project Folder
 cd tasktracker
 Backend Setup
+
 3️⃣ Install Backend Dependencies
 cd backend
 npm install
+
 4️⃣ Create .env File
 PORT=5000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
+
 5️⃣ Start Backend Server
 npm run dev
 Frontend Setup
+
 6️⃣ Install Frontend Dependencies
 cd frontend
 npm install
+
 7️⃣ Start Frontend
 npm run dev
+
 📂 Project Structure
 TaskTracker/
 │
@@ -75,6 +83,7 @@ TaskTracker/
 │   └── App.jsx
 │
 └── README.md
+
 🔗 API Features
 RESTful API Architecture
 CRUD Operations for Tasks
@@ -82,6 +91,7 @@ Authentication APIs
 Role-Based Protected Routes
 File Upload APIs
 Task Filtering & Pagination APIs
+
 🎯 Key Highlights
 Built using MERN Stack Architecture
 Secure Role-Based Access System
@@ -89,6 +99,7 @@ Optimized Task Lifecycle Workflow
 Scalable REST APIs
 Fully Responsive UI using Tailwind CSS
 Efficient File Upload Management with Multer
+
 📸 Future Enhancements
 Realtime Notifications
 Email Reminders
